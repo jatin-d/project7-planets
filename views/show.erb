@@ -1,0 +1,20 @@
+<div id="detailContainer">
+    <div>
+        <div>
+            <p>This is <%= planet['name']%>..!</p>
+            <p>Diameter = <%= planet['diameter']%> km</p>
+            <p>Diatamce = <%= planet['distance']%> million km</p>
+            <p>Mass = <%= planet['mass']%> × 10^n kg</p>
+            <p>Moon-count = <%= planet['moon_count']%></p>
+        </div>
+        <form action="/planet" method="post">
+            <input type="hidden" name="id" value="<%= planet['id']%>">
+            <input type="hidden" name="_method" value="delete">
+            <button>Delete This Planet</button>
+        </form>
+        <a id="editPlanetLink" href="/planet/<%= planet['id']%>/edit">Edit Planet Details</a>
+    </div>
+    <div>
+        <img src="<%= planet['image_url']%>" alt="Picture of the planet">
+    </div>  
+</div> 

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Planets</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div id="titleContainer">
+      <h1> <a id="title" href="/">Planets..!</a></h1>
+      <div>
+        <%if is_logged_in?%>
+          <p id="currantUserDisplay">logged in as <%=read_user_by_id(session[:user_id])['first_name']%></p>
+        <%end%>
+      </div>
+    </div> 
+    <div id="layoutNavContainer">
+      <a id="anchorHome" href="/">Home</a>
+      <a id="anchorCreate" href="/planet/new">Planet++</a>
+      <a id="anchorSignup" href="/signup">SignUp</a>
+      <a id="anchorLogin" href="/login">LogIn</a>
+      <%if is_logged_in?%>
+        <form action="/login" method="post">
+          <input type="hidden" name="user_id" value=<%=session[:user_id]%>>
+          <input type="hidden" name="_method" value="delete">
+          <button id="logOut">LogOut</button>
+        </form>
+      <%end%>
+    </div>
+  </header>
+  <%= yield %>
+</body>
+</html>

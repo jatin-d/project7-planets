@@ -1,0 +1,7 @@
+<div id="planeListWrapper">
+    <% planets.each do |planet|%>
+        <ul>
+            <li><a href="/show/<%=planet['id']%>"><%=planet['name']%></a></li>
+        </ul>
+    <%end%>
+</div>

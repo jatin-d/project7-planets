@@ -1,0 +1,34 @@
+<form id="editPlantForm" action="/planet" method="post">
+    <input type="hidden" name="id" value="<%= planet['id']%>">
+    <input type="hidden" name="_method" value="patch">
+
+    <div>
+    <label for="name">Planet Name</label>
+    <input name="name" type="text" value="<%=planet['name']%>">
+    </div>
+    <div>
+    <label for="image_url">Enter Image Link</label>
+    <input name="image_url"type="text" value="<%=planet['image_url']%>">
+    </div>
+    <div>
+    <label for="diameter">Planet Diameter</label>
+    <input name="diameter"type="number" value=<%=planet['diameter']%>>
+    </div>
+    <div>
+    <label for="distance">Diatance From Earth</label>
+    <input name="distance"type="number" value=<%=planet['distance']%>>
+    </div>
+    <div>
+    <label for="mass">Mass Of The Planet</label>
+    <input name="mass"type="number" value=<%=planet['mass']%>>
+    </div>
+    <div>
+    <label for="moon_count">How Many Moons does it have?</label>
+    <input name="moon_count"type="number" value=<%=planet['moon_count']%>>
+    </div> 
+    <div></div> 
+    <div>
+    <div>  </div>
+    <button id="saveButton">Save</button>
+    </div>
+</form>
